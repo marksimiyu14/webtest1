@@ -1,0 +1,352 @@
+/********** Template CSS **********/
+
+:root {
+    --primary: #2878EB;
+    --secondary: #F14D5D;
+    --light: #ECF4FF;
+    --dark: #120F2D;
+}
+
+[class^=flaticon-]:before,
+[class*=" flaticon-"]:before,
+[class^=flaticon-]:after,
+[class*=" flaticon-"]:after {
+    font-size: inherit;
+    margin-left: 0;
+}
+
+h1,
+h2,
+.font-weight-bold {
+    font-weight: 700 !important;
+}
+
+h3,
+h4,
+.font-weight-semi-bold {
+    font-weight: 600 !important;
+}
+
+h5,
+h6,
+.font-weight-medium {
+    font-weight: 500 !important;
+}
+
+.btn {
+    font-family: 'Jost', sans-serif;
+    font-weight: 600;
+    transition: .5s;
+}
+
+p {
+    font-size: 19px;
+    font-family: 'Playfair Display', serif;
+}
+
+.btn-primary,
+.btn-secondary,
+.btn-primary:hover,
+.btn-secondary:hover {
+    color: #FFFFFF;
+}
+
+.btn-primary:hover {
+    background: var(--secondary);
+    border-color: var(--secondary);
+}
+
+.btn-secondary:hover {
+    background: var(--primary);
+    border-color: var(--primary);
+}
+
+.btn-square {
+    width: 36px;
+    height: 36px;
+}
+
+.btn-sm-square {
+    width: 28px;
+    height: 28px;
+}
+
+.btn-lg-square {
+    width: 46px;
+    height: 46px;
+}
+
+.btn-square,
+.btn-sm-square,
+.btn-lg-square {
+    padding-left: 0;
+    padding-right: 0;
+    text-align: center;
+}
+
+.back-to-top {
+    position: fixed;
+    display: none;
+    right: 45px;
+    bottom: 45px;
+    z-index: 99;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    font-family: 'Jost', sans-serif;
+    position: relative;
+    margin-left: 30px;
+    padding: 30px 0;
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--light);
+    outline: none;
+    transition: .5s;
+}
+
+.sticky-top.navbar-light .navbar-nav .nav-link {
+    padding: 20px 0;
+}
+
+.navbar-light .navbar-nav .nav-link:hover,
+.navbar-light .navbar-nav .nav-link.active {
+    color: var(--secondary);
+}
+
+@media (min-width: 992px) {
+    .navbar-light .navbar-nav .nav-link::before {
+        position: absolute;
+        content: "";
+        width: 0;
+        height: 5px;
+        bottom: 0;
+        left: 50%;
+        background: var(--secondary);
+        transition: .5s;
+    }
+    .navbar-light .navbar-nav .nav-link:hover::before,
+    .navbar-light .navbar-nav .nav-link.active::before {
+        width: 100%;
+        left: 0;
+    }
+    .navbar-light .navbar-nav .nav-link.nav-contact::before {
+        display: none;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .navbar-light .navbar-nav .nav-link {
+        margin-left: 0;
+        padding: 10px 0;
+    }
+}
+
+.carousel-pos {
+    position: relative;
+}
+
+.carousel-pos h5 {
+    position: absolute;
+    top: 50%;
+    left: 25%;
+}
+
+.carousel-caption {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: transparent;
+    z-index: 1;
+}
+
+@media (max-width: 576px) {
+    .carousel-caption h5 {
+        font-size: 14px;
+        font-weight: 500 !important;
+    }
+    .carousel-caption h1 {
+        font-size: 30px;
+        font-weight: 600 !important;
+    }
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: 5%;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    width: 2rem;
+    height: 2rem;
+}
+
+.carousel-indicators {
+    align-items: flex-end;
+}
+
+.carousel-indicators [data-bs-target] {
+    width: 5px;
+    height: 20px;
+}
+
+.carousel-indicators .active {
+    height: 36px;
+}
+
+.hero-header {
+    background: linear-gradient(rgba(18, 15, 45, .5), rgba(18, 15, 45, .5)), url(../imgnew/services/Switch-cables.jpg) top right;
+    background-size: cover;
+}
+
+.team-item {
+    border-radius: 10px;
+    box-shadow: 20px 20px 50px 10px pink inset;
+    transition: transform 0.5s;
+}
+
+.team-item:hover {
+    box-shadow: 5px 10px 18px #888888;
+    transform: scaleX(-5px);
+}
+
+.service-item div {
+    z-index: 1;
+}
+
+.service-item div::after {
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border-radius: 2px 2px 0 0;
+    transition: .5s;
+    z-index: -1;
+}
+
+
+/*.service-item div:hover::after {
+    width: 100%;
+    background: var(--secondary);
+}*/
+
+.service-item * {
+    transition: .5s;
+}
+
+
+/* animated border*/
+
+.service-item {
+    --g: 10px;
+    /* the gap */
+    --b: 2px;
+    /* border thickness*/
+    --c: #d35474;
+    /* the color */
+    padding: calc(var(--g) + var(--b));
+    --_c: #0000 0 25%, var(--c) 0 50%;
+    --_g1: repeating-linear-gradient(90deg, var(--_c)) repeat-x;
+    --_g2: repeating-linear-gradient(180deg, var(--_c)) repeat-y;
+    background: var(--_g1) var(--_p, 25%) 0, var(--_g2) 0 var(--_p, 125%), var(--_g1) var(--_p, 125%) 100%, var(--_g2) 100% var(--_p, 25%);
+    background-size: 200% var(--b), var(--b) 200%;
+    cursor: pointer;
+    filter: grayscale(50%);
+    transition: .3s;
+}
+
+.service-item:hover {
+    --_p: 75%;
+    filter: grayscale(0%);
+}
+
+
+/*.service-item:hover * {
+    color: var(--light) !important;
+}*/
+
+.bg-offer {
+    background: linear-gradient(rgba(231, 8, 19, 0.644), rgba(212, 20, 29, 0.8));
+    background-size: cover;
+}
+
+
+/*  SYSTEM ONE SERVICES */
+
+.testimonial-carousel .owl-dots {
+    height: 45px;
+    margin-top: 5px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.testimonial-carousel .owl-dot {
+    position: relative;
+    display: inline-block;
+    margin: 0 5px;
+    width: 5px;
+    height: 25px;
+    background: #DDDDDD;
+    transition: .5s;
+}
+
+.testimonial-carousel .owl-dot.active {
+    height: 45px;
+    background: var(--secondary);
+}
+
+.testimonial-carousel .owl-item .testimonial-text,
+.testimonial-carousel .owl-item .testimonial-text * {
+    transition: .5s;
+}
+
+.testimonial-carousel .owl-item.center .testimonial-text {
+    background: transparent;
+}
+
+.testimonial-carousel .owl-item.center .testimonial-text * {
+    color: var(--secondary) !important;
+}
+
+
+/*  SYSTEM ONE SERVICES END */
+
+
+/*   footer  */
+
+.page-fooer {
+    color: #ff3333;
+    font-size: 14px;
+}
+
+
+/* close footer*/
+
+.blog-date {
+    position: absolute;
+    width: 90px;
+    height: 65px;
+    top: 75px;
+    left: -25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: var(--secondary);
+}
+
+.blog-date::after {
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 0;
+    top: -25px;
+    left: 0;
+    border: 13px solid;
+    border-color: transparent #D34351 #D34351 transparent;
+    z-index: -1;
+}
